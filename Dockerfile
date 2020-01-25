@@ -1,5 +1,5 @@
 FROM buildpack-deps:latest
-MAINTAINER Sam Doshi <alexej.bondarenko@ersocon.net>
+MAINTAINER Alexej Bondarenko <alexej.bondarenko@ersocon.net>
 
 ENV STACK_VERSION 2.1.3
 
@@ -10,6 +10,7 @@ ENV LANG C.UTF-8
 
 RUN apt-get update -q && \
     apt-get install -qy libgmp-dev && \
+    apt-get install -qy docker-compose && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
